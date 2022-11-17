@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+<div class="page-layout">
+  <mat-drawer-container class="example-container sidenav" >
+    <mat-drawer class="nav-left" mode="side" [(opened)]="opened">
+      <ng-material-multilevel-menu [configuration]='config' [items]='appitems'>
+      </ng-material-multilevel-menu>
+    </mat-drawer>
+    <mat-drawer-content class="nav-right">
+      <div class="header">
+        <button (click)="opened=!opened" class="btn-toggle">
+          <i class="fa-solid fa-bars text-2xl p-3 rounded-xl hover:text-black hover:bg-white"></i>
+        </button>
+        <i class="fa-solid fa-user icon-user"></i>
+      </div>
+      <div class="container">
+
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
