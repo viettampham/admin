@@ -9,6 +9,7 @@ export class SystemPageComponent implements OnInit {
   opened = true;
 
 
+
   constructor() { }
 
   ngOnInit(): void {
@@ -31,63 +32,43 @@ export class SystemPageComponent implements OnInit {
 
   appitems = [
     {
-      label: 'NPM',
-      imageIcon: '/assets/batman.jpg',
-      link: 'https://www.npmjs.com/package/ng-material-multilevel-menu',
+      label: 'User',
+      faIcon: 'fa-solid fa-user',
       externalRedirect: true,
-      hrefTargetType: '_blank' // _blank|_self|_parent|_top|framename
+      link: 'system/manager-user',
     },
     {
-      label: 'Item 1 (with Font awesome icon)',
-      faIcon: 'fab fa-500px',
+      label: 'Product',
+      faIcon: 'fa-brands fa-product-hunt',
       items: [
         {
-          label: 'Item 1.1',
-          link: '/item-1-1',
-          faIcon: 'fab fa-accusoft'
+          label: 'Items',
+          link: 'system/manager-product',
+          faIcon: 'fa-regular fa-list'
         },
         {
-          label: 'Item 1.2',
-          faIcon: 'fab fa-accessible-icon',
-          disabled: true,
-          items: [
-            {
-              label: 'Item 1.2.1',
-              link: '/item-1-2-1',
-              faIcon: 'fa-allergies' // Font awesome default prefix is fas
-            },
-            {
-              label: 'Item 1.2.2',
-              faIcon: 'fas fa-ambulance',
-              items: [
-                {
-                  label: 'Item 1.2.2.1',
-                  faIcon: 'fas fa-anchor',  // Still you can specify if you want to
-                  onSelected: function() {
-                    console.log('Item 1.2.2.1');
-                  }
-                }
-              ]
-            }
-          ]
+          label: 'Category',
+          faIcon: 'fa-solid fa-c',
+          disabled: false,
+          link: 'system/manager-category',
         }
       ]
     },
     {
-      label: 'Item 2',
-      icon: 'alarm',
+      label: 'Cart',
+      faIcon: 'fa-regular fa-cart-shopping',
       items: [
         {
-          label: 'Item 2.1',
+          label: 'Cart',
           link: '/item-2-1',
-          icon: 'favorite_border',
+          faIcon: 'fa-regular fa-cart-shopping',
           activeIcon: 'favorite',
-          disabled: true,
+          disabled: false,
         },
         {
-          label: 'Item 2.2',
+          label: 'Order',
           link: '/item-2-2',
-          icon: 'favorite_border',
+          faIcon: 'fa-solid fa-file-invoice',
           activeIcon: 'favorite',
           navigationExtras: {
             queryParams: { order: 'popular', filter: 'new' },
@@ -109,4 +90,6 @@ export class SystemPageComponent implements OnInit {
       hidden: true
     }
   ];
+
+
 }
