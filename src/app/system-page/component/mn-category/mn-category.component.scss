@@ -1,0 +1,36 @@
+.component{
+  .title{
+    @apply text-2xl;
+    &::before{
+      @apply px-1 py-1.5;
+      content: "";
+      background-color: #19b5f1;
+      display: inline;
+      margin-right: 10px;
+      margin-left: 4px;
+    }
+  }
+  .search-add-action{
+    @apply flex flex-row justify-between items-center my-5 px-5;
+
+    .search-group{
+      @apply flex flex-row justify-center items-center;
+      .ip-search{
+        @apply text-xl py-1 px-5 rounded-lg;
+        width: 400px;
+      }
+      .icon-search{
+        @apply text-2xl mx-5 hover:text-black px-2 py-1 rounded-full hover:bg-white;
+      }
+    }
+    .icon-add-user{
+      @apply text-2xl mx-5 hover:text-black px-2 py-2 rounded-full hover:bg-white;
+    }
+  }
+  .table-container{
+    @apply w-full px-5 overflow-hidden;
+    .table{
+      @apply w-full;
+    }
+  }
+}
