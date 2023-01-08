@@ -17,6 +17,14 @@ import { MnProductComponent } from './system-page/component/mn-product/mn-produc
 import { MnCategoryComponent } from './system-page/component/mn-category/mn-category.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { DialogAddUserComponent } from './system-page/Dialog/dialog-add-user/dialog-add-user.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {CommonModule} from "@angular/common";
+import { DialogEditUserComponent } from './system-page/Dialog/dialog-edit-user/dialog-edit-user.component';
+import { DialogEditCategoryComponent } from './system-page/Dialog/dialog-edit-category/dialog-edit-category.component';
+import { DialogAddProductComponent } from './system-page/Dialog/dialog-add-product/dialog-add-product.component';
+import { DialogEditProductComponent } from './system-page/Dialog/dialog-edit-product/dialog-edit-product.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,12 @@ import {HttpClientModule} from "@angular/common/http";
     SystemPageComponent,
     MnUserComponent,
     MnProductComponent,
-    MnCategoryComponent
+    MnCategoryComponent,
+    DialogAddUserComponent,
+    DialogEditUserComponent,
+    DialogEditCategoryComponent,
+    DialogAddProductComponent,
+    DialogEditProductComponent
   ],
     imports: [
         BrowserModule,
@@ -38,7 +51,9 @@ import {HttpClientModule} from "@angular/common/http";
         MatTableModule,
         MatPaginatorModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        MatDialogModule,
+        MatButtonModule,
     ],
   providers: [MultilevelMenuService],
   bootstrap: [AppComponent]

@@ -66,7 +66,7 @@ export class SystemPageComponent implements OnInit {
           disabled: false,
         },
         {
-          label: 'Order',
+          label: 'Bills',
           link: '/item-2-2',
           faIcon: 'fa-solid fa-file-invoice',
           activeIcon: 'favorite',

@@ -31,6 +31,18 @@
     @apply w-full px-5 overflow-hidden;
     .table{
       @apply w-full;
+      @apply bg-white ;
+      color: black;
+      .row-table{
+        border-bottom: 1px solid black;
+        .table-element{
+          @apply text-center py-3;
+        }
+      }
+      td{
+        @apply px-3;
+      }
     }
   }
+
 }
