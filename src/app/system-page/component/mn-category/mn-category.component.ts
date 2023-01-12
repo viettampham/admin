@@ -6,6 +6,7 @@ import {Product} from "../../../Models/Product";
 import {Category} from "../../../Models/ViewModels/Category";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogEditCategoryComponent} from "../../Dialog/dialog-edit-category/dialog-edit-category.component";
+import {DialogAddCategoryComponent} from "../../Dialog/dialog-add-category/dialog-add-category.component";
 
 @Component({
   selector: 'app-mn-category',
@@ -41,7 +42,7 @@ export class MnCategoryComponent implements OnInit {
   DeleteCategory(id:string) {
     if (confirm("Do you sure ?")){
       // @ts-ignore
-      this.api.GetListCategory(id).subscribe(res=>{
+      this.api.DeleteCategory(id).subscribe(res=>{
         alert("Success")
         location.reload()
       })
@@ -54,6 +55,12 @@ export class MnCategoryComponent implements OnInit {
       data:c
     }).afterClosed().subscribe(res=>{
       this.GetCategory()
+    })
+  }
+
+  ODACategory() {
+    this.dialog.open(DialogAddCategoryComponent,{
+      width:'40%',
     })
   }
 }

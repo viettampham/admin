@@ -12,7 +12,12 @@ import {MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./dialog-add-user.component.scss']
 })
 export class DialogAddUserComponent implements OnInit {
-  FormSignUp:any;
+  FormSignUp = this.fb.group({
+    userName:[''],
+    name:[''],
+    address:[''],
+    passWord:['']
+  });
 
   constructor(private fb :FormBuilder,
               private apiService:ApiService,
@@ -24,16 +29,10 @@ export class DialogAddUserComponent implements OnInit {
   }
 
   submit() {
-    if (this.FormSignUp.value.password!=this.FormSignUp.value.verifypassword){
-      alert("Password not verify")
-    }
-    else {
       this.apiService.Registration(this.FormSignUp.value as RegistrationRequest).subscribe(res=>{
         this.matDialogRef.close();
         alert("Success");
         location.reload()
-        /*this.FormSignUp.reset();*/
       })
     }
   }
-}

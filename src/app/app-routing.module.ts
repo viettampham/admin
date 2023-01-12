@@ -7,7 +7,7 @@ import {MnProductComponent} from "./system-page/component/mn-product/mn-product.
 import {MnCategoryComponent} from "./system-page/component/mn-category/mn-category.component";
 
 const routes: Routes = [
-  {path:"",component:LoginComponent},
+  {path:"login",component:LoginComponent},
   {
     path:"system",component:SystemPageComponent,
     children:[

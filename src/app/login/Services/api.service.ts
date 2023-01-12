@@ -9,11 +9,11 @@ import {RegistrationRequest} from "../../Models/RequestModels/RegistrationReques
 import {UserResponse} from "../../Models/ViewModels/UserResponse";
 import {Product} from "../../Models/Product";
 import {Category} from "../../Models/ViewModels/Category";
-import {empty} from "rxjs";
 import {EditCategoryRequest} from "../../Models/RequestModels/EditCategoryRequest";
 import {EditUserRequest} from "../../Models/RequestModels/EditUserRequest";
 import {CreateProductRequest} from "../../Models/RequestModels/CreateProductRequest";
 import {EditProductRequest} from "../../Models/RequestModels/EditProductRequest";
+import {CreateCategoryRequest} from "../../Models/RequestModels/CreateCategoryRequest";
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +34,6 @@ export class ApiService {
   EditUser=(request:EditUserRequest)=>this.httpClient.post<EditUserRequest>(`${environment.api_domain}/Authentication/Edit-user`,request)
   CreateProduct=(request:CreateProductRequest)=>this.httpClient.post<Product>(`${environment.api_domain}/Product/Create-Product`,request)
   EditProduct=(request:EditProductRequest)=>this.httpClient.post<Product>(`${environment.api_domain}/Product/Edit-product`,request);
-
+  CreateCategory=(request:CreateCategoryRequest)=>this.httpClient.post<Category>(`${environment.api_domain}/Category/Create-category`,request);
 
 }

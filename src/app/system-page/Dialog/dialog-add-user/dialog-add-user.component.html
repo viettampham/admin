@@ -6,7 +6,7 @@
       <form class="example-form login-form" [formGroup]="FormSignUp">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>UserName</mat-label>
-          <input type="email" matInput placeholder="Enter your email..." formControlName="username">
+          <input type="email" matInput placeholder="Enter your email..." formControlName="userName">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
@@ -21,14 +21,15 @@
 
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Password</mat-label>
-          <input type="text" matInput placeholder="Enter your password..." formControlName="password">
+          <input type="text" matInput placeholder="Enter your password..." formControlName="passWord">
         </mat-form-field>
 
-        <mat-form-field class="example-full-width" appearance="fill">
+        <!--<mat-form-field class="example-full-width" appearance="fill">
           <mat-label>VerifyPassword</mat-label>
           <input type="text" matInput placeholder="Enter your password..." formControlName="verifypassword">
-        </mat-form-field>
-        <button class="btn-login">ADD</button>
+        </mat-form-field>-->
+
+        <button class="btn-login" (click)="submit()">ADD</button>
       </form>
     </div>
 

@@ -17,7 +17,17 @@
         <button (click)="opened=!opened" class="btn-toggle">
           <i class="fa-solid fa-bars text-2xl p-3 rounded-xl hover:text-black hover:bg-white"></i>
         </button>
-        <i class="fa-solid fa-user icon-user"></i>
+        <div class="user-group">
+          <span class="username-text text-base">{{DisplayName}}</span>
+          <i class="fa-solid fa-user icon-user">
+            <div class="model-user-action">
+              <ul class="action-user">
+                <li class="item"><button>Change Password</button></li>
+                <li class="item"><button>Logout</button></li>
+              </ul>
+            </div>
+          </i>
+        </div>
       </div>
       <div class="container">
         <router-outlet></router-outlet>

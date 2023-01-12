@@ -7,6 +7,7 @@ import {FormBuilder} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogAddProductComponent} from "../../Dialog/dialog-add-product/dialog-add-product.component";
 import {DialogEditProductComponent} from "../../Dialog/dialog-edit-product/dialog-edit-product.component";
+import {style} from "@angular/animations";
 
 @Component({
   selector: 'app-mn-product',
@@ -31,6 +32,9 @@ export class MnProductComponent implements OnInit{
   GetListProduct(){
     this.api.GetListProduct().subscribe(res=>{
       this.Products = res;
+      this.Products.forEach(p=>{
+        p.displayPrice = p.price.toLocaleString('vi',{style:"currency",currency:'VND'})
+      })
       this.dataSource = new MatTableDataSource<Product>(this.Products);
       this.dataSource.paginator = this.paginator;
     })

@@ -20,11 +20,16 @@ import {HttpClientModule} from "@angular/common/http";
 import { DialogAddUserComponent } from './system-page/Dialog/dialog-add-user/dialog-add-user.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
-import {CommonModule} from "@angular/common";
 import { DialogEditUserComponent } from './system-page/Dialog/dialog-edit-user/dialog-edit-user.component';
 import { DialogEditCategoryComponent } from './system-page/Dialog/dialog-edit-category/dialog-edit-category.component';
 import { DialogAddProductComponent } from './system-page/Dialog/dialog-add-product/dialog-add-product.component';
 import { DialogEditProductComponent } from './system-page/Dialog/dialog-edit-product/dialog-edit-product.component';
+import { DialogAddCategoryComponent } from './system-page/Dialog/dialog-add-category/dialog-add-category.component';
+import {JwtModule} from "@auth0/angular-jwt";
+
+export function tokenGetter() {
+  return localStorage.getItem("access_token");
+}
 
 @NgModule({
   declarations: [
@@ -38,7 +43,8 @@ import { DialogEditProductComponent } from './system-page/Dialog/dialog-edit-pro
     DialogEditUserComponent,
     DialogEditCategoryComponent,
     DialogAddProductComponent,
-    DialogEditProductComponent
+    DialogEditProductComponent,
+    DialogAddCategoryComponent
   ],
     imports: [
         BrowserModule,
@@ -54,6 +60,13 @@ import { DialogEditProductComponent } from './system-page/Dialog/dialog-edit-pro
         HttpClientModule,
         MatDialogModule,
         MatButtonModule,
+        JwtModule.forRoot({
+          config: {
+            tokenGetter: tokenGetter,
+            allowedDomains: ["example.com"],
+            disallowedRoutes: ["http://example.com/examplebadroute/"],
+          },
+        }),
     ],
   providers: [MultilevelMenuService],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Component({
   selector: 'app-system-page',
@@ -7,13 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SystemPageComponent implements OnInit {
   opened = true;
+  DisplayName = ''
 
 
-
-  constructor() { }
+  constructor(private jwtHelperService:JwtHelperService) { }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('token'))
+    const tokenObj = this.token();
+    this.DisplayName = tokenObj['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
+    console.log(this.DisplayName)
   }
+
+  public token = () => {
+    const token = localStorage.getItem('token') ?? '';
+    const objectToken = this.decodeToken(token);
+    return objectToken;
+  }
+
+  public decodeToken = (rawToken: string) => this.jwtHelperService?.decodeToken(rawToken);
+
 
 
   config = {
